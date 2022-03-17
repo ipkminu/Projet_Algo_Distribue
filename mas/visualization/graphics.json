@@ -1,0 +1,22 @@
+{
+  "vertices": {
+    "border_thickness" : 2,
+    "border_color" : "black",
+    "radius" : 6,
+    "color" : "navy"
+  },
+
+  "edges": {
+    "thickness" : 1,
+    "color" : "#555555",
+    "dashstyle" : "()"
+  },
+  
+  "agents":{
+    "color" : "green",
+    "radius" : 16,
+    "id_color" : "white",
+    "border_color" : "orange",
+    "border_thickness" : 1
+  }
+}

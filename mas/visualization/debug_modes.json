@@ -1,0 +1,56 @@
+{
+  "Normal": {
+    "name": "Normal",
+    "display_name": false,
+    "displaying_color": null,
+    "verbose": false,
+    "mark_vertices": false,
+    "mark_edges": false,
+    "activate_clicking": false
+  },
+  "Vertex_visualization": {
+    "name": "Vertex_visualization",
+    "display_name": true,
+    "displaying_color": "blue",
+    "verbose": false,
+    "mark_vertices": true,
+    "mark_edges": false,
+    "activate_clicking": false
+  },
+  "Full_visualization": {
+    "name": "Full_visualization",
+    "display_name": true,
+    "displaying_color": "blue",
+    "verbose": false,
+    "mark_vertices": true,
+    "mark_edges": true,
+    "activate_clicking": false
+  },
+  "Simple_debug": {
+    "name": "Simple_debug",
+    "display_name": true,
+    "displaying_color": "red",
+    "verbose": true,
+    "mark_vertices": false,
+    "mark_edges": false,
+    "activate_clicking": true
+  },
+  "Exploration_debug": {
+    "name": "Exploration_debug",
+    "display_name": true,
+    "displaying_color": "red",
+    "verbose": true,
+    "mark_vertices": true,
+    "mark_edges": false,
+    "activate_clicking": true
+  },
+  "Cartography_debug": {
+    "name": "Cartography_debug",
+    "display_name": true,
+    "displaying_color": "red",
+    "verbose": true,
+    "mark_vertices": true,
+    "mark_edges": true,
+    "activate_clicking": true
+  }
+}

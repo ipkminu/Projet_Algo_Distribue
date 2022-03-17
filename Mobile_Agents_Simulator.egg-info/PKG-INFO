@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: Mobile-Agents-Simulator
+Version: 0.0.1
+Summary: A minimal simulator for mobile agents in graphs
+Home-page: UNKNOWN
+Author: Sébastien Ratel
+Author-email: sebastien.ratel@centrale-marseille.fr
+License: UNKNOWN
+Keywords: mobile agents,simulator,distributed algorithms
+Platform: UNKNOWN
+Classifier: Natural Language :: English
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Education
+Classifier: Programming Language :: Python :: 3.8.8
+Classifier: License :: Free for non-commercial use
+Description-Content-Type: text/markdown
+
+# Building and installing project
+
+pip install .
+
+# Build documentation
+
+python setup.py build_sphinx
+
+# Test code
+
+pytest -v
+
+# Further remarks
+
+If GraphViz is not installed, then selecting "dot" or "circo" in the GUI for 
+displaying a graph will lead to an error when clicking "re-draw".
+However, other layout methods are available to display graphs without GraphViz.
+
