@@ -156,6 +156,11 @@ class Simulation:
 
         #Memory
         self._agent_memory = dict()
+        #Position memory
+        self._positions_memory=dict()
+
+
+
 
     def _init_agents_list(self, agents_list, agents_number):
         if agents_list is None:
@@ -445,6 +450,12 @@ class Simulation:
             of the given agent.
         :rtype: dict or any
         """
+        if agent.get_position_id() in self._positions_memory.keys():
+            if field in self._positions_memory[agent.get_position_id()].keys():
+                return self._positions_memory[agent.get_position_id()][field]
+        else :
+            print("AUcune donnée sur la memoire de cette position")
+            return False
 
     def ask_for_writing_on_memory_field(self, agent, field, value, append):
         """Write on an agent's memory field, if possible.
@@ -508,7 +519,17 @@ class Simulation:
             exist, True otherwise.
         :rtype: boolean
         """
-        pass
+        #En cas de changement d'une valeur en memoire, la valeur précédente est écrasée
+        if agent.get_position_id() not in self._positions_memory.keys() :
+            self._positions_memory[agent.get_position_id()]=dict()
+            self._positions_memory[agent.get_position_id()][field]=value
+            return value
+        if field not in self._agent_memory.keys() and append == False:
+            self._positions_memory[agent.get_position_id()]=dict()
+            print ("La variable n'existe pas. Changez le paramtre append en true pour le créer")
+        if field in self._agent_memory.keys():
+            self._positions_memory[agent.get_position_id()][field]=value
+            return value
 
     def ask_if_position_contains_mate(self, agent):
         """Ask if several agents are on the current position of the given agent.
