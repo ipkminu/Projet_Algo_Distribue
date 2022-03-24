@@ -1,3 +1,7 @@
+#from msilib.schema import Error
+from multiprocessing.dummy import Array
+
+from numpy import NaN, empty
 from .Agent import Agent
 from .agent_algorithms import *
 from .AgentManager import AgentManager
@@ -150,6 +154,9 @@ class Simulation:
         self._init_visited_edges_and_vertices()
         self._init_previous_positions()
 
+        #Memory
+        self._agent_memory = dict()
+
     def _init_agents_list(self, agents_list, agents_number):
         if agents_list is None:
             for _ in range(agents_number):
@@ -260,7 +267,12 @@ class Simulation:
             memory field.
         :rtype: any
         """
-        pass
+        if field in self._agent_memory.keys():
+            return self._agent_memory[field]  
+        else :
+            return False
+            
+        
 
     def ask_for_moving(self, agent, port):
         """ Moves an agent, if possible. Namely, the agent ``position``
@@ -433,7 +445,6 @@ class Simulation:
             of the given agent.
         :rtype: dict or any
         """
-        pass
 
     def ask_for_writing_on_memory_field(self, agent, field, value, append):
         """Write on an agent's memory field, if possible.
@@ -457,7 +468,23 @@ class Simulation:
             exist, True otherwise.
         :rtype: boolean
         """
-        pass
+        if field not in self._agent_memory.keys() and append == True :
+            self._agent_memory[field]=value
+            return value
+        if field not in self._agent_memory.keys() and append == False:
+            print ("La variable n'existe pas")
+        if field in self._agent_memory.keys():
+            self._agent_memory[field]=value
+            return value
+
+
+
+
+
+
+
+
+
 
     def ask_for_writing_on_position_field(self, agent, field, value, append):
         """Write on the position's memory field of an agent, if possible.
