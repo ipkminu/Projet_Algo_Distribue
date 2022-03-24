@@ -479,13 +479,13 @@ class Simulation:
             exist, True otherwise.
         :rtype: boolean
         """
-        if field not in self._agent_memory.keys() and append == True :
-            self._agent_memory[field]=value
+        if field in self._agent_memory.keys() and append == True :
+            self._agent_memory[field].append(value)
             return value
-        if field not in self._agent_memory.keys() and append == False:
-            print ("La variable n'existe pas")
-        if field in self._agent_memory.keys():
-            self._agent_memory[field]=value
+        if field in self._agent_memory.keys() and append == False:
+            self._agent_memory[field]=[value]
+        if field not in self._agent_memory.keys():
+            self._agent_memory[field]=[value]
             return value
 
 
